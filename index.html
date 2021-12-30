@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>boot</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .form-control:focus {
+        border: none;
+        box-shadow: none;
+      }
+      @media (min-width: 768.1px) {
+        .news {
+          width: 50% !important;
+        }
+      }
+      @media (max-width: 768px) {
+        .news {
+          width: 100%;
+        }
+      }
+      .navbar {
+        opacity: 1;
+        transition: all 0.5s ease;
+      }
+
+      .navbar-hide {
+        pointer-events: none;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body data-bs-spy="scroll">
+    <!-- NAV -->
+    <nav
+      class="
+        navbar
+        bg-opacity-100
+        sticky-top
+        navbar-expand-md navbar-dark
+        bg-dark
+        py-3
+      "
+    >
+      <div class="container">
+        <a class="navbar-brand">Soroush Jaberi</a>
+        <div class="btn-container  d-flex flex-row d-md-none ">
+          <button
+        type="button"
+        style="box-shadow: none"
+        class="btn text-light "
+        data-bs-toggle="modal"
+        data-bs-target="#login"
+      >
+        Log in
+      </button>
+      <button
+      type="button"
+      style="box-shadow: none"
+      class="btn btn-primary "
+      data-bs-toggle="modal"
+      data-bs-target="#signup"
+    >
+      Sign up
+    </button>
+        </div>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navmenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navmenu">
+          <ul class="navbar-nav ms-auto nav-pills">
+            <li class="nav-item">
+              <a href="#about" class="nav-link">Who am I</a>
+            </li>
+            <li class="nav-item">
+              <a href="#projects" class="nav-link">projects</a>
+            </li>
+            <li class="nav-item">
+              <a href="#how" class="nav-link">How do I work</a>
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link">Contact</a>
+            </li>
+            <li class="nav-item">
+              <button
+                type="button"
+                style="box-shadow: none"
+                class="btn text-light d-none d-md-block"
+                data-bs-toggle="modal"
+                data-bs-target="#login"
+              >
+                Log in
+              </button>
+            </li>
+            <li class="nav-item">
+              <button
+                type="button"
+                style="box-shadow: none"
+                class="btn btn-primary d-none d-md-block"
+                data-bs-toggle="modal"
+                data-bs-target="#signup"
+              >
+                Sign up
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- showCASE -->
+    <section id="about" class="p5 pb-lg-0 bg-dark text-center text-light">
+      <div class="container">
+        <div
+          class="
+            flex-row
+            d-sm-flex
+            align-items-center
+            text-sm-start
+            justify-content-between
+          "
+        >
+          <div>
+            <h2>
+              A developer for <span class="text-warning">YOUR WEBSITE</span>
+            </h2>
+            <p class="lead mb-3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi,
+              provident. Lorem ipsum dolor sit, amet consectetur adipisicing
+              elit. Deserunt, impedit. Lorem ipsum dolor sit, amet
+              consecteturlorem adipisicing elit. Eligendi, natus.
+            </p>
+            <button class="btn btn-primary mb-3">Reserve Me</button>
+          </div>
+          <img
+            src="undraw_programming_re_kg9v.svg"
+            class="w-50 d-none d-sm-block"
+            alt="showCASE"
+          />
+        </div>
+      </div>
+    </section>
+    <!-- send needs -->
+    <section class="bg-primary p-5 text-light">
+      <div class="container">
+        <div
+          class="
+            flex-column flex-md-row
+            d-md-flex
+            align-items-center
+            justify-content-between
+          "
+        >
+          <h5 class="mb-3 mb-md-0">Tell me what you need from me 💻</h5>
+          <div class="input-group mb-3 news">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="write here..."
+            />
+            <button
+              class="btn btn-dark btn-lg"
+              type="button"
+              id="button-addon2"
+            >
+              send
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Cards -->
+    <section id="projects" class="p-5">
+      <div class="container">
+        <div class="row text-center g-4">
+          <div
+            class="
+              col-md
+              m-2
+              d-flex
+              align-items-center
+              justify-content-center
+              d-md-block
+            "
+          >
+            <div class="card w-100" style="width: 18rem">
+              <img
+                src="undraw_apps_re_ienc.svg"
+                class="card-img-top"
+                alt="..."
+                height="246px"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Have App</h5>
+                <p class="card-text collapse" id="app">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#app"
+                  >Read more</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="
+              col-md
+              m-2
+              d-flex
+              align-items-center
+              justify-content-center
+              d-md-block
+            "
+          >
+            <div class="card w-100" style="width: 18rem">
+              <img
+                src="undraw_mobile_browsers_re_kxol.svg"
+                class="card-img-top"
+                alt="..."
+                height="246px"
+              />
+              <div class="card-body">
+                <h5 class="card-title">multi-browser</h5>
+                <p class="card-text collapse" id="browers">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#browers"
+                  >Read more</a
+                >
+              </div>
+            </div>
+          </div>
+          <div
+            class="
+              col-md
+              m-2
+              d-flex
+              align-items-center
+              justify-content-center
+              d-md-block
+            "
+          >
+            <div class="card w-100" style="width: 18rem">
+              <img
+                src="undraw_certificate_re_yadi.svg"
+                class="card-img-top"
+                alt="..."
+                height="246px"
+              />
+              <div class="card-body">
+                <h5 class="card-title">certificated</h5>
+                <p class="card-text collapse" id="certificated">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </p>
+                <a
+                  href="#"
+                  class="btn btn-primary"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#certificated"
+                  >Read more</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- detail sections -->
+    <section class="p-5" id="knowledge">
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md p-0 p-md-5">
+            <div class="h3">I can do HTML, CSS & JavaScript</div>
+            <p class="lead">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Officiis, Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Saepe repellendus quis voluptate nihil dolor eveniet dicta quod
+              quas est adipisci!
+            </p>
+            <a href="#" class="btn btn-secondary my-3 border-secondary">
+              read more
+            </a>
+          </div>
+          <div class="col-md">
+            <img src="undraw_static_assets_rpm6.svg" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="p-5 bg-dark">
+      <div class="container">
+        <div
+          class="
+            row
+            align-items-center
+            justify-content-between
+            bg-dark
+            text-light
+          "
+        >
+          <div class="col-md">
+            <img src="undraw_react_y-7-wq.svg" class="img-fluid" />
+          </div>
+          <div class="col-md py-3 py-md-5">
+            <div class="h3">
+              I know JavaScript famous library
+              <span class="text-warning">React</span>
+            </div>
+            <p class="lead">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Officiis, Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Saepe repellendus quis voluptate nihil dolor eveniet dicta quod
+              quas est adipisci!
+            </p>
+            <a href="#" class="btn btn-primary my-3 border-secondary">
+              read more
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="p-5 bg-success">
+      <div class="container">
+        <div class="row align-items-center justify-content-between text-light">
+          <div class="col-md py-3 py-md-5">
+            <div class="h3">
+              You need someone who knows version control
+              <span class="text-warning">Git</span>
+            </div>
+            <p class="lead">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Officiis, Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Saepe repellendus quis voluptate nihil dolor eveniet dicta quod
+              quas est adipisci!
+            </p>
+            <a href="#" class="btn btn-warning my-3 border-secondary">
+              read more
+            </a>
+          </div>
+          <div class="col-md">
+            <img src="undraw_version_control_re_mg66.svg" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="how" class="p-5">
+      <div class="container">
+        <h2 class="text-center text-dark">How do I work</h2>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <!-- item -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#responsibility"
+              >
+                Responsibility
+              </button>
+            </h2>
+            <div
+              id="responsibility"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+                perferendis facere quos Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Delectus, consequuntur! Adipisci facilis
+                nesciunt animi quas culpa, quis temporibus? Laudantium,
+                doloremque. sint vel eius explicabo nisi inventore, quia iure.
+                <code
+                  >I'm responsible for all the problems of frontend if was my
+                  fault
+                </code>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+                aliquid!
+              </div>
+            </div>
+          </div>
+          <!-- item -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#fee"
+              >
+                fee
+              </button>
+            </h2>
+            <div
+              id="fee"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+                perferendis facere quos Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Delectus, consequuntur! Adipisci facilis
+                nesciunt animi quas culpa, quis temporibus? Laudantium,
+                doloremque. sint vel eius explicabo nisi inventore, quia iure.
+                <code
+                  >I'm responsible for all the problems of frontend if was my
+                  fault
+                </code>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+                aliquid!
+              </div>
+            </div>
+          </div>
+          <!-- item -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#time"
+              >
+                Work time
+              </button>
+            </h2>
+            <div
+              id="time"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa
+                perferendis facere quos Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Delectus, consequuntur! Adipisci facilis
+                nesciunt animi quas culpa, quis temporibus? Laudantium,
+                doloremque. sint vel eius explicabo nisi inventore, quia iure.
+                <code
+                  >I'm responsible for all the problems of frontend if was my
+                  fault
+                </code>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
+                aliquid!
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- colligues -->
+    <section class="p-5 bg-primary">
+      <div class="container">
+        <h2 class="text-center text-dark mb-5">My colleagues you might want</h2>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/portraits/men/1.jpg"
+                  class="mb-3 rounded-circle img-fluid"
+                  alt=""
+                  style="height: 150px"
+                />
+                <h4 class="card-title text-center mb-3">UI/UX</h4>
+                <p class="card-text lead mb-3">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Praesentium temporibus rem laudantium facilis similique,
+                  dolorem sunt nulla aperiam. Veritatis, labore.
+                </p>
+                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-telegram text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/portraits/men/3.jpg"
+                  class="mb-3 rounded-circle img-fluid"
+                  alt=""
+                  style="height: 150px"
+                />
+                <h4 class="card-title text-center mb-3">Python</h4>
+                <p class="card-text lead mb-3">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Praesentium temporibus rem laudantium facilis similique,
+                  dolorem sunt nulla aperiam. Veritatis, labore.
+                </p>
+                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-telegram text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- colleague -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/portraits/men/4.jpg"
+                  class="mb-3 rounded-circle img-fluid"
+                  alt=""
+                  style="height: 150px"
+                />
+                <h4 class="card-title text-center mb-3">java</h4>
+                <p class="card-text lead mb-3">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Praesentium temporibus rem laudantium facilis similique,
+                  dolorem sunt nulla aperiam. Veritatis, labore.
+                </p>
+                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-telegram text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- colleague end -->
+          <!-- colleague -->
+          <div class="col-md-6 col-lg-3">
+            <div class="card bg-light">
+              <div class="card-body text-center">
+                <img
+                  src="https://randomuser.me/portraits/men/5.jpg"
+                  class="mb-3 rounded-circle img-fluid"
+                  alt=""
+                  style="height: 150px"
+                />
+                <h4 class="card-title text-center mb-3">AI</h4>
+                <p class="card-text lead mb-3">
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                  Praesentium temporibus rem laudantium facilis similique,
+                  dolorem sunt nulla aperiam. Veritatis, labore.
+                </p>
+                <a href="#"><i class="bi bi-instagram text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-telegram text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-twitter text-dark mx-1"></i></a>
+                <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+              </div>
+            </div>
+          </div>
+          <!-- colleague end -->
+        </div>
+      </div>
+    </section>
+    <!-- contact -->
+    <section id="contact" class="p-5 bg-light">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md">
+            <h2 class="text-center mb-4">Contact Info</h2>
+            <ul class="list-group list-group-flush lead">
+              <li class="list-group-item">
+                <span class="fw-bold"
+                  >Location <span class="bi bi-pin-fill"></span> :</span
+                >
+                faze 3 , Andisheh new town , Tehran
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold"
+                  >Phone <span class="bi bi-telephone-fill"></span> :</span
+                >
+                +98-9028454710
+              </li>
+              <li class="list-group-item">
+                <span class="fw-bold"
+                  >email <span class="bi bi-envelope-fill"></span> :</span
+                >
+                sorooshjaber@gmail.com
+              </li>
+            </ul>
+          </div>
+          <div class="col-md">
+            <div
+              id="map"
+              style="height: 100%; width: 100%; border-radius: 10px"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="p-5 bg-dark text-white text-center position-relative">
+      <div class="container">
+        <p class="lead">Copyright &copy; Soroush Jaberi</p>
+        <a href="#" class="position-absolute bottom-0 p-5 end-0">
+          <i class="bi bi-arrow-up-circle-fill h2"></i>
+        </a>
+      </div>
+    </footer>
+    <!-- Modal -->
+    <div class="modal fade" id="login">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Log in</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="lead">Fill the form for free</p>
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Log in</button>
+              <div class="d-md-flex justify-content-end">
+                <a href="" class="mx-2 text-decoration-none lead">forgot password</a>
+                <a href="" class="mx-2 text-decoration-none lead">Create new account</a>
+              </div>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="signup">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="lead">Create account</p>
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">First name</label>
+                <input type="text" class="form-control" >
+                <label for="exampleInputEmail1" class="form-label">Last name</label>
+                <input type="text" class="form-control" >
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label for="exampleInputPassword1" class="form-label">Repeat password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+              </div>
+              <button type="submit" class="btn btn-primary">Create</button>
+              <div class="d-md-flex justify-content-end">
+                <a href="" class="mx-2 text-decoration-none lead">Have already an account</a>
+              </div>
+            </form>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </body>
+  <!-- JavaScript Bundle with Popper -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.3.1/mapbox-gl.js"></script>
+  <script>
+    mapboxgl.accessToken =
+      "pk.eyJ1Ijoic29yb29zaGphYmVyaSIsImEiOiJja3hraGpvYzg0c3k3MnJvNTd4Y2M5ZHMwIn0.bN1uTJR3jtT-TloFCT7-4g";
+    var map = new mapboxgl.Map({
+      container: "map",
+      style: "mapbox://styles/mapbox/streets-v11",
+      center: [51, 35],
+      zoom: 18,
+    });
+    map.addControl(new mapboxgl.NavigationControl());
+  </script>
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+  ></script>
+  <script></script>
+</html>
